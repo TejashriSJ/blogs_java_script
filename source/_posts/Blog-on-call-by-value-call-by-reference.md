@@ -48,7 +48,7 @@ examples:
 
 ```javascript
 function callByReference(valueObjReference) {
-  value["position"] = "inside function";
+  valueObjReference["position"] = "inside function";
   console.log(valueObjReference); // prints {position : inside funnction}
 }
 let valueObj = { position: "outside function" };
