@@ -74,14 +74,14 @@ If a compare function with arguments value1 and value2 returns a number,
 
 To sort the strings with non-ASCII characters, that is strings with languages other than English we can use the localeCompare() method.
 
-The localeCompare() method compares two strings in the current locale. The current locale is based on the language settings of the browser.
+The localeCompare() method compares two strings in the current locale. The current locale is based on the language settings of the browser. This enables case-insensitive sorting for an array.
 
 We can use this method for the above problem also,
 
 ```javascript
 let stringArray = ["apple", "Mango", "JackFruit"];
 stringArray.sort((fruit1, fruit2) => {
-  return fruit1.toLowerCase().localeCompare(fruit2.toLowerCase());
+  return fruit1.localeCompare(fruit2);
 });
 console.log(stringArray); // ['apple', 'JackFruit', 'Mango']
 ```
@@ -159,13 +159,13 @@ console.log(JSON.stringify(objArray));
 
 // sort using the name property
 objArray.sort((person1, person2) => {
-  return person1.name.toLowerCase().localeCompare(person2.name.toLowerCase());
+  return person1.name.localeCompare(person2.name);
 });
 console.log(JSON.stringify(objArray));
 //[{"name":"Akash","age":22},{"name":"Anand","age":21},{"name":"Bhagya","age":27}]
 ```
 
-#####Sorting Objects
+##### Sorting Objects
 
 Sorting values inside the Objects
 
@@ -228,9 +228,7 @@ let students = [
 students.sort((student1, student2) => {
   //Only if marks are same compare with names otherwise compare with marks
   if (student1.Marks === student2.Marks) {
-    return student1.name
-      .toLocaleLowerCase()
-      .localeCompare(student2.name.toLocaleLowerCase());
+    return student1.name.localeCompare(student2.name);
   } else {
     return student1.Marks - student2.Marks;
   }
