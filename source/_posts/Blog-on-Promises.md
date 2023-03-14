@@ -261,7 +261,7 @@ Promise.race([promise1, promise2, promise3])
     console.log(promiseMessage);
   })
   .catch((RejectMessage) => {
-    console.log(RejectMessage);
+    console.error(RejectMessage);
   });
 // Prints promise 3
 ```
