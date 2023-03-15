@@ -1,5 +1,5 @@
 ---
-title: Blog-on-path.md
+title: Blog-on-path
 date: 2023-03-15 15:07:10
 tags:
 ---
