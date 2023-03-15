@@ -36,6 +36,8 @@ console.log(path.join("path1", "path2", "path3"));
 //path1/path2/path3
 ```
 
+Here all the paths are joined using "/" delimiter and return the normalized path string.
+
 - When all the given paths are not strings,
 
 ```javascript
@@ -43,12 +45,14 @@ console.log(path.join("path1", 2, "path3"));
 //TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of a type string.
 ```
 
-- If the path segment is of length Zero then that will be ignored,
+- If the path segment is of length Zero,
 
 ```javascript
 console.log(path.join("path1", "", "path3"));
 //path1/path3
 ```
+
+The second path which is of length Zero will be ignored.
 
 - If the joined path string is a zero-length string then the '.' current working directory will be returned.
 
